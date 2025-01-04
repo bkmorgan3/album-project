@@ -3,20 +3,21 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  border: 1px solid red;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.container {
+  border: 2px solid blue;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.album {
+  border: 1px solid green;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+
+
 
 @keyframes logo-spin {
   from {
