@@ -62,5 +62,11 @@
 @media (min-width: 1200px) {
   .album {
     flex-basis: 22%;
+    transition: transform 500ms;
   }
+    .album:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+      background-color: rgba(0,0,0,0.2);
+    }
 }
