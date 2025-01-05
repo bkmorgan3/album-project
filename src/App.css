@@ -3,41 +3,43 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  border: 1px solid red;
 }
 
 .container {
-  border: 2px solid blue;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .album {
-  border: 1px solid green;
+  flex-basis: 100%;
+  border-radius: 5px;
 }
 
-
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.album img {
+  width: 100%;
+  border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.album-details {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.card {
-  padding: 2em;
+.artist-name {
+  font-size: 16;
+  line-height: 24px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
 }
 
-.read-the-docs {
-  color: #888;
+.album-name {
+ font-size: 14px;
+  margin: 0;
+  padding: 0;
 }
