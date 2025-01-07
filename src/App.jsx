@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import AlbumsGrid from './AlbumsGrid'
 
 function App() {
