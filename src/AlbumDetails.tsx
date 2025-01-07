@@ -1,9 +1,10 @@
 import { useParams } from 'react-router'
 import { useEffect, useState } from 'react'
 import AlbumDetailsPage from './AlbumDetailsPage'
+import type { AlbumAndTracks } from './AlbumDetailsPage'
 
 export default function AlbumDetails() {
-    const [album, setAlbum] = useState()
+    const [album, setAlbum] = useState<AlbumAndTracks>()
     const [isLoading, setIsLoading] = useState(true)
     const {id} = useParams()
     
@@ -25,7 +26,7 @@ export default function AlbumDetails() {
             {
             isLoading ?
             <span>Loading... </span> : 
-            <AlbumDetailsPage album={album} />
+            album && <AlbumDetailsPage album={album} />
         }
         </div>
     )

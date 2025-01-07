@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react"
 import AlbumsList from "./AlbumsList"
+import type { AlbumAndTracks } from './AlbumDetailsPage'
+
 
 
 export default function AlbumsGrid() {
-    const [albums, setAlbums] = useState([])
+    const [albums, setAlbums] = useState<AlbumAndTracks[]>([])
     const [isLoading, setIsLoading] = useState(true)
+
+    console.log(albums)
 
 
     useEffect(() => {
@@ -22,7 +26,7 @@ export default function AlbumsGrid() {
             {
                 isLoading ? 
                 <span>Loading...</span> : 
-              <AlbumsList albums={albums} />
+              albums && <AlbumsList albums={albums} />
             }
         </section>
     )
