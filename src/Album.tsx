@@ -1,8 +1,20 @@
 import { truncate } from "./utils/truncate"
 import { Link } from 'react-router'
 
+interface AlbumProps {
+    image: string
+   artistName: string
+   albumName: string
+}
 
-export default function Album({album}) {    
+type AlbumInfo = [AlbumProps]
+
+interface Props {
+    album: AlbumInfo
+}
+
+export default function Album(props: Props) {  
+    const { album } = props
     return (
         <article className="album" >
             <img src={album['im:image'][2].label} />
@@ -14,4 +26,4 @@ export default function Album({album}) {
             </div>
          </article>
     )
-}
+    }

@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react"
 import AlbumsList from "./AlbumsList"
-import type { AlbumAndTracks } from './AlbumDetailsPage'
+import type { AlbumsProps } from "./AlbumsList"
 
 
 
 export default function AlbumsGrid() {
-    const [albums, setAlbums] = useState<AlbumAndTracks[]>([])
+    const [albums, setAlbums] = useState<AlbumsProps[]>([])
     const [isLoading, setIsLoading] = useState(true)
 
     console.log(albums)
