@@ -9,7 +9,6 @@ export interface AlbumInfo {
 }
 export type AlbumAndTracks = [AlbumInfo, ...TrackInfo[]]
 
-
 export interface TrackInfo {
     trackName: string
     trackId:string
@@ -35,13 +34,13 @@ export default function AlbumDetailsPage(props: Props) {
                     <p>{albumInfo.releaseDate.slice(0,4)} &nbsp;- &nbsp; </p>
                     <p>{albumInfo.primaryGenreName}</p> </div>
                 </div>
-        </div>
+            </div>
 
             <ol className='tracks'>
                 {tracks.map((track => (
                     <li key={track.trackId}>{track.trackName}</li>
                 )))}
             </ol>
-             </div>
+        </div>
     )
 }
