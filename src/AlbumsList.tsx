@@ -1,6 +1,6 @@
 import Album from "./Album"
 
-interface AlbumId {
+export interface AlbumId {
     attributes: {[key:string]: string}
     label: string;
 }

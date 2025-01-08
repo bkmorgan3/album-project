@@ -1,19 +1,25 @@
 import { truncate } from "./utils/truncate"
 import { Link } from 'react-router'
+import type { AlbumId } from "./AlbumsList"
 
+interface AlbumImage {
+    attributes: {[key:string]: string}
+    label: string
+}
+
+interface ArtistName {
+    attributes: {[key:string]: string}
+    label: string
+}
 interface AlbumProps {
-    image: string
-   artistName: string
-   albumName: string
+    id: AlbumId
+    image: AlbumImage[]
+    artistName: ArtistName
+    albumName: {[key: string]: string}
 }
 
-type AlbumInfo = [AlbumProps]
-
-interface Props {
-    album: AlbumInfo
-}
-
-export default function Album(props: Props) {  
+export default function Album(props: AlbumProps) {  
+    console.log("p", props)
     const { album } = props
     return (
         <article className="album" >
