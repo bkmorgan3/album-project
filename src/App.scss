@@ -14,12 +14,13 @@
 
 .album {
   flex-basis: 100%;
+  
+  & img {
+    width: 100%;
+      border-radius: 5px;
+  }
 }
 
-.album img {
-  width: 100%;
-  border-radius: 5px;
-}
 
 .album-details {
   margin: 0;
@@ -41,9 +42,9 @@
  font-size: 14px;
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8)
 }
-
-
 
 .image img{
   width: 100%;
@@ -75,11 +76,6 @@
   margin: 0.5rem 0;
 }
 
- .album-name {
-   text-decoration: none;
-   color: rgba(255, 255, 255, 0.8)
- }
-
 
 @media (min-width: 768px) {
   .container {
@@ -94,7 +90,6 @@
   }
   
   .details {
-   /* border: 1px solid red; */
    display: flex;
    flex-direction: column;
    justify-content: flex-end;
@@ -122,10 +117,7 @@
     background-color: rgba(0,0,0,0.2);
   }
 
- 
   .album-name:hover {
     text-decoration: underline
   }
-
-
 }

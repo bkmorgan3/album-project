@@ -1,6 +1,6 @@
 
 
-export const truncate = (str, maxLength) => {
+export const truncate = (str:string, maxLength: number) => {
     if (str.length <= maxLength) {
         return str;
     }
