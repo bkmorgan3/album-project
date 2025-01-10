@@ -19,6 +19,7 @@ export default function AlbumDetails() {
         const json = await album.json()
         setAlbum(json.results)
         setIsLoading(false)
+        return
     }
 
     return (
