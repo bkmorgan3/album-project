@@ -15,11 +15,17 @@ export default function AlbumDetails() {
     },[])
 
     async function fetchAlbumDetails() {
-        const album = await fetch(`https://itunes.apple.com/lookup?id=${id}&entity=song`, {mode: 'no-cors'})
-        const json = await album.json()
-        setAlbum(json.results)
-        setIsLoading(false)
-        return json
+        try {
+            const album = await fetch(`https://itunes.apple.com/lookup?id=${id}&entity=song`, {mode: 'no-cors'})
+            const json = await album.json()
+            console.log('j', json)
+            setAlbum(json.results)
+            setIsLoading(false)
+            return json
+
+        } catch (e) {
+            console.error(e)
+        }
     }
 
     return (
