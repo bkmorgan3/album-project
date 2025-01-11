@@ -1,6 +1,8 @@
+import { useContext } from "react"
 import { truncate } from "./utils/truncate"
 import { Link } from 'react-router'
 import type { AlbumId } from "./AlbumsList"
+import { AlbumContext } from "./AlbumContext"
 
 interface AlbumImage {
     attributes: {[key:string]: string}
@@ -19,10 +21,12 @@ interface AlbumProps {
 }
 
 export default function Album(props: AlbumProps) {  
-    console.log("p", props)
+    const {selectedAlbum, setSelectedAlbum} = useContext(AlbumContext)
+    console.log("SSSSS", selectedAlbum)
+    
     const { album } = props
     return (
-        <article className="album" >
+        <article onClick={() => setSelectedAlbum(album)} className="album" >
             <Link to={`albums/${album.id.attributes['im:id']}`}>
             <img src={album['im:image'][2].label} />
             <div className="album-details">
