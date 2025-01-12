@@ -22,9 +22,8 @@ interface AlbumProps {
 
 export default function Album(props: AlbumProps) {  
     const {selectedAlbum, setSelectedAlbum} = useContext(AlbumContext)
-    console.log("SSSSS", selectedAlbum)
-    
     const { album } = props
+    
     return (
         <article onClick={() => setSelectedAlbum(album)} className="album" >
             <Link to={`albums/${album.id.attributes['im:id']}`}>

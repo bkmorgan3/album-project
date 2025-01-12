@@ -6,16 +6,15 @@ import { AlbumContext } from "./AlbumContext"
 
 export default function Wrapper() {
       const [selectedAlbum, setSelectedAlbum] = useState({})
-  console.log("SEL", selectedAlbum)
-    return (
-         <BrowserRouter>
-         <AlbumContext.Provider value={{selectedAlbum, setSelectedAlbum}}>
 
+    return (
+    <BrowserRouter>
+        <AlbumContext.Provider value={{selectedAlbum, setSelectedAlbum}}>
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/albums/:id" element={<AlbumDetails />} />
         </Routes>
-         </AlbumContext.Provider>
+        </AlbumContext.Provider>
     </BrowserRouter>
     )
 }

@@ -21,7 +21,7 @@ export default function AlbumsGrid() {
             {
                 isLoading ? 
                 <span>Loading...</span> : 
-              albums && <AlbumsList albums={albums} />
+                albums && <AlbumsList albums={albums} />
             }
         </section>
     )
