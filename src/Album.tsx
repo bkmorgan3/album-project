@@ -19,7 +19,6 @@ interface AlbumProps {
 }
 
 export default function Album(props: AlbumProps) {  
-    console.log("p", props)
     const { album } = props
     return (
         <article className="album" >

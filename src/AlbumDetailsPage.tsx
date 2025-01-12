@@ -19,6 +19,7 @@ export interface TrackInfo {
 }
 
 export default function AlbumDetailsPage(props: Props) {
+    console.log({props})
     const { album } = props;
     const [albumInfo, ...tracks] = album
     return  (
