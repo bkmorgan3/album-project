@@ -20,7 +20,7 @@ export default function AlbumDetails() {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*'
+                    'Access-Control-Allow-Origin': 'https://album-project-fawn.vercel.app/'
                 }
             })
             const json = await album.json()
