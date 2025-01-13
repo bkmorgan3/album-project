@@ -16,7 +16,7 @@ interface Props {
 }
 
 export default function AlbumsList(props:Props) {
-    const {albums} = props;
+    const { albums } = props;
    
     return (
         <div className="container">

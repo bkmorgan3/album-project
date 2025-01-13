@@ -1,13 +1,8 @@
-import { useParams } from 'react-router'
-import { useEffect, useState, useContext } from 'react'
-import AlbumDetailsPage from './AlbumDetailsPage'
-import type { AlbumAndTracks } from './AlbumDetailsPage'
+import { useContext } from 'react'
 import { AlbumContext } from "./AlbumContext"
-import { truncate } from './utils/truncate'
 
 
 export default function AlbumDetails() {
-    const { id } = useParams()
     const { selectedAlbum, setSelectedAlbum } = useContext(AlbumContext)
     return (
         <div>

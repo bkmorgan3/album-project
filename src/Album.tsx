@@ -21,7 +21,7 @@ interface AlbumProps {
 }
 
 export default function Album(props: AlbumProps) {  
-    const {selectedAlbum, setSelectedAlbum} = useContext(AlbumContext)
+    const { setSelectedAlbum} = useContext(AlbumContext)
     const { album } = props
     
     return (

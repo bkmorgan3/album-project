@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import AlbumsList from "./AlbumsList"
 import type { AlbumsProps } from "./AlbumsList"
+import { AlbumContext } from "./AlbumContext"
 
 export default function AlbumsGrid() {
     const [albums, setAlbums] = useState<AlbumsProps[]>([])
     const [isLoading, setIsLoading] = useState(true)
+    const { setFetchedAlbums } = useContext(AlbumContext)
 
     useEffect(() => {
         fetchAlbums()
@@ -15,6 +17,7 @@ export default function AlbumsGrid() {
         const json = await albums.json()
         setAlbums(json.feed.entry)
         setIsLoading(false)
+        setFetchedAlbums(json.feed.entry)
     }
     return (
         <section>
