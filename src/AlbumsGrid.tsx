@@ -4,7 +4,7 @@ import type { AlbumsProps } from "./AlbumsList"
 import { AlbumContext } from "./AlbumContext"
 
 export default function AlbumsGrid() {
-    const [albums, setAlbums] = useState<AlbumsProps[]>([])
+    // const [albums, setAlbums] = useState<AlbumsProps[]>([])
     const [isLoading, setIsLoading] = useState(true)
     const { setFetchedAlbums } = useContext(AlbumContext)
 
@@ -15,7 +15,7 @@ export default function AlbumsGrid() {
     async function fetchAlbums() {
         const albums = await fetch("https://itunes.apple.com/us/rss/topalbums/limit=100/json")
         const json = await albums.json()
-        setAlbums(json.feed.entry)
+        // setAlbums(json.feed.entry)
         setIsLoading(false)
         setFetchedAlbums(json.feed.entry)
     }
@@ -24,7 +24,7 @@ export default function AlbumsGrid() {
             {
                 isLoading ? 
                 <span>Loading...</span> : 
-                albums && <AlbumsList albums={albums} />
+                <AlbumsList  />
             }
         </section>
     )
