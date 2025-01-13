@@ -26,7 +26,7 @@ export default function Search() {
             name="search"
             value={term}
             onChange={(e) => setTerm(e.target.value)}
-            placeholder="search "
+            placeholder="Artist Name"
             id="search"
           />
           <button>Search</button>
