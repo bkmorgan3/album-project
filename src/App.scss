@@ -36,6 +36,7 @@
   font-weight: 500;
   margin: 0;
   padding: 0;
+  color: rgba(255, 255, 255, 0.8)
 }
 
 .album-name {
@@ -74,6 +75,19 @@
 
 .tracks li {
   margin: 0.5rem 0;
+}
+
+.search-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  
+
+  & button {
+    border-radius: 3px;
+    border: none;
+    font-size: 16px;
+  }
 }
 
 

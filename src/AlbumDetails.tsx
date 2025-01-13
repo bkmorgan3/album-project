@@ -1,38 +1,25 @@
-import { useParams } from 'react-router'
-import { useEffect, useState } from 'react'
-import AlbumDetailsPage from './AlbumDetailsPage'
-import type { AlbumAndTracks } from './AlbumDetailsPage'
+import { useContext } from "react";
+import { AlbumContext } from "./AlbumContext";
 
 export default function AlbumDetails() {
-    const [album, setAlbum] = useState<AlbumAndTracks>()
-    const [isLoading, setIsLoading] = useState(true)
-    const {id} = useParams()
-    
-    console.log(album)
-
-    useEffect(() => {
-        fetchAlbumDetails()
-    },[])
-
-    async function fetchAlbumDetails() {
-        try {
-            const album = await fetch(`https://itunes.apple.com/lookup?id=${id}&entity=song`)
-            const json = await album.json()
-            setAlbum(json.results)
-            setIsLoading(false)
-
-        } catch (e) {
-            console.error(e)
-        }
-    }
-
-    return (
-        <div>
-            {
-            isLoading ?
-            <span>Loading... </span> : 
-            album && <AlbumDetailsPage album={album} />
-        }
+  const { selectedAlbum, setSelectedAlbum } = useContext(AlbumContext);
+  return (
+    <div>
+      <div className="heading">
+        <div className="image">
+          <img src={selectedAlbum["im:image"][2].label} alt="" />
         </div>
-    )
+        <div className="details">
+          <p className="artist">{selectedAlbum["im:artist"].label}</p>
+          <p className="title">{selectedAlbum["im:name"].label}</p>
+          <div className="metadata">
+            <p>
+              {selectedAlbum["im:releaseDate"].label.slice(0, 4)}&nbsp;- &nbsp;{" "}
+            </p>
+            <p>{selectedAlbum.category.attributes.term}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
