@@ -3,15 +3,14 @@ import { AlbumContext } from "./AlbumContext"
 
 
 export default function Search() {
-    const {fetchedAlbums} = useContext(AlbumContext)
+    const {fetchedAlbums, setSearchedAlbums} = useContext(AlbumContext)
     const [term, setTerm] = useState("")
 
     const handleSearch = (e) => {
         e.preventDefault()
-        console.log(term)
         setTerm("")
         
-       
+       setSearchedAlbums(fetchedAlbums.filter(album => album['im:artist'].label === term))
     }
    
     return (

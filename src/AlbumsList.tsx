@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import Album from "./Album"
+import { AlbumContext } from "./AlbumContext";
 
 export interface AlbumId {
     attributes: {[key:string]: string}
@@ -16,6 +18,9 @@ interface Props {
 }
 
 export default function AlbumsList(props:Props) {
+    const { fetchedAlbums, searchedAlbums} = useContext(AlbumContext)
+    console.log("Fetched:::", fetchedAlbums)
+    console.log("Searched:::", searchedAlbums)
     const { albums } = props;
    
     return (
