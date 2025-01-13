@@ -1,27 +1,16 @@
 import { useContext } from "react"
 import { truncate } from "./utils/truncate"
 import { Link } from 'react-router'
-import type { AlbumId } from "./AlbumsList"
 import { AlbumContext } from "./AlbumContext"
+import { AlbumProps, IAlbumProps } from "./@types/album"
 
-interface AlbumImage {
-    attributes: {[key:string]: string}
-    label: string
-}
 
-interface ArtistName {
-    attributes: {[key:string]: string}
-    label: string
-}
-interface AlbumProps {
-    id: AlbumId
-    image: AlbumImage[]
-    artistName: ArtistName
-    albumName: {[key: string]: string}
-}
 
-export default function Album(props: AlbumProps) {  
-    const { setSelectedAlbum} = useContext(AlbumContext)
+
+
+
+export default function Album(props: IAlbumProps) {  
+    const { setSelectedAlbum } = useContext(AlbumContext)
     const { album } = props
     
     return (

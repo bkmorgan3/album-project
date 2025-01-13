@@ -11,13 +11,13 @@ export default function Wrapper() {
 
 
     return (
-    <BrowserRouter>
-        <AlbumContext.Provider value={{selectedAlbum, setSelectedAlbum, fetchedAlbums, setFetchedAlbums, searchedAlbums, setSearchedAlbums}}>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/albums/:id" element={<AlbumDetails />} />
-        </Routes>
-        </AlbumContext.Provider>
-    </BrowserRouter>
+      <BrowserRouter>
+          <AlbumContext.Provider value={{selectedAlbum, setSelectedAlbum, fetchedAlbums, setFetchedAlbums, searchedAlbums, setSearchedAlbums}}>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/albums/:id" element={<AlbumDetails />} />
+          </Routes>
+          </AlbumContext.Provider>
+      </BrowserRouter>
     )
 }

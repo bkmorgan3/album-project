@@ -6,7 +6,7 @@ export default function Search() {
     const {fetchedAlbums, setSearchedAlbums} = useContext(AlbumContext)
     const [term, setTerm] = useState("")
 
-    const handleSearch = (e) => {
+    const handleSearch = (e: React.FormEvent) => {
         e.preventDefault()
         setTerm("")
 
