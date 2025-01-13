@@ -2,8 +2,10 @@ import { useContext, useState } from "react";
 import { AlbumContext } from "./AlbumContext";
 
 export default function Search() {
-  const { fetchedAlbums, setSearchedAlbums } = useContext(AlbumContext);
+  const { fetchedAlbums, setSearchedAlbums, searchedAlbums } =
+    useContext(AlbumContext);
   const [term, setTerm] = useState("");
+  const [hasSearched, setHasSearched] = useState(false);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -14,6 +16,12 @@ export default function Search() {
         album["im:artist"].label.toLowerCase().includes(term.toLowerCase()),
       ),
     );
+    setHasSearched(true);
+  };
+
+  const handleInputChange = (e) => {
+    setTerm(e.target.value);
+    setHasSearched(false);
   };
 
   return (
@@ -25,12 +33,17 @@ export default function Search() {
             type="text"
             name="search"
             value={term}
-            onChange={(e) => setTerm(e.target.value)}
+            onChange={(e) => handleInputChange(e)}
             placeholder="Artist Name"
             id="search"
           />
           <button>Search</button>
           <button onClick={() => setSearchedAlbums([])}>Clear</button>
+        </div>
+        <div className="search-error-container">
+          {hasSearched && searchedAlbums.length === 0 && (
+            <p className="search-error">No Results</p>
+          )}
         </div>
       </form>
     </div>
