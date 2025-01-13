@@ -10,7 +10,7 @@ export default function Search() {
         e.preventDefault()
         setTerm("")
 
-       setSearchedAlbums(fetchedAlbums.filter(album => album['im:artist'].label.toLowerCase() === term.toLowerCase()))
+       setSearchedAlbums(fetchedAlbums.filter(album => album['im:artist'].label.toLowerCase().includes(term.toLowerCase())))
     }
    
     return (
