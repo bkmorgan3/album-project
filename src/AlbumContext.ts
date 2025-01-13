@@ -1,17 +1,5 @@
 import { createContext } from "react";
-import type { AlbumProps } from "./@types/album";
+import type { AlbumContextType } from "./@types/album";
+import { selectedAlbum, searchedAlbums, fetchedAlbums } from "./lib/initialState"
 
-export const AlbumContext = createContext<AlbumProps>({
-    "im:artist": {
-        attributes: ""
-    },
-    "im:image":  [
-        {label: "", 
-        attributes: {height: ""}
-    }],
-    "im:name": {label: "", attributes: {label: ""}},
-    id: {
-        label: "",
-        attributes: {"im:id": ''}
-    }
-})
+export const AlbumContext = createContext<AlbumContextType>(selectedAlbum, fetchedAlbums, searchedAlbums);
