@@ -1,20 +1,20 @@
-type Label = {
+export type Label = {
   label: string;
 };
 
-type LabelWithAttributes<T> = {
+export type LabelWithAttributes<T> = {
   label: string;
   attributes: T;
 };
 
-type Image = {
+export type Image = {
   label: string;
   attributes: {
     height: string;
   };
 };
 
-type Price = {
+export type Price = {
   label: string;
   attributes: {
     currency: string;
@@ -22,7 +22,7 @@ type Price = {
   };
 };
 
-type ContentType = {
+export type ContentType = {
   "im:contentType": {
     attributes: {
       term: string;
@@ -35,7 +35,7 @@ type ContentType = {
   };
 };
 
-type Link = {
+export type Link = {
   attributes: {
     rel: string;
     type: string;
@@ -43,21 +43,21 @@ type Link = {
   };
 };
 
-type Id = {
+export type Id = {
   label: string;
   attributes: {
     "im:id": string;
   };
 };
 
-type Artist = {
+export type Artist = {
   label: string;
   attributes: {
     href: string;
   };
 };
 
-type Category = {
+export type Category = {
   attributes: {
     "im:id": string;
     label: string;
@@ -66,7 +66,7 @@ type Category = {
   };
 };
 
-type ReleaseDate = {
+export type ReleaseDate = {
   label: string;
   attributes: {
     label: string;
