@@ -31,6 +31,19 @@ export default function AlbumsGrid() {
     }),
   });
 
+  const ContentTypeSchema = z.object({
+    "im:contentType": z.object({
+      attributes: z.object({
+        term: z.string(),
+        label: z.string(),
+      }),
+    }),
+    attributes: z.object({
+      term: z.string(),
+      label: z.string(),
+    }),
+  });
+
   async function fetchAlbums() {
     const albums = await fetch(
       "https://itunes.apple.com/us/rss/topalbums/limit=100/json",
